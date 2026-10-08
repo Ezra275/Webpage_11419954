@@ -25,6 +25,7 @@
       --text-dim: #64748b;
       --code-bg: #090d16;
       --success: #10b981;
+      --danger: #ef4444;
       --warning: #f59e0b;
       --font-sans: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
       --font-code: 'Fira Code', 'Consolas', monospace;
@@ -55,7 +56,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Background Glow Effects */
+    /* Background Subtle Grid & Glow Effects */
     .bg-grid {
       position: fixed;
       top: 0;
@@ -63,8 +64,8 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(0, 120, 212, 0.15) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 15% 20%, rgba(0, 120, 212, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
         linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
       background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
@@ -94,7 +95,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 17, 32, 0.88);
+      background: rgba(11, 17, 32, 0.9);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--dark-border);
       transition: var(--transition);
@@ -103,12 +104,6 @@
     .nav-inner {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 0 0 13px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
       justify-content: space-between;
       height: 72px;
     }
@@ -131,7 +126,7 @@
 
     .brand-text {
       background: linear-gradient(120deg, #ffffff 40%, var(--accent) 100%);
-      -webkit-background-clip: text;
+      -webkit-background-
       -webkit-text-fill-color: transparent;
       font-family: 'Plus Jakarta Sans', var(--font-sans);
     }
@@ -162,7 +157,8 @@
       position: relative;
     }
 
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--text-main);
     }
 
@@ -226,7 +222,7 @@
       transform: translateY(-2px);
     }
 
-    /* Mobile menu button */
+    /* Mobile Menu Toggle */
     .menu-toggle {
       display: none;
       background: transparent;
@@ -237,7 +233,7 @@
 
     /* Hero Section */
     .hero {
-      padding: 90px 0 80px;
+      padding: 85px 0 80px;
       position: relative;
     }
 
@@ -253,7 +249,7 @@
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      background: rgba(0, 120, 212, 0.12);
+      background: rgba(0, 120, 212, 0.15);
       border: 1px solid rgba(56, 189, 248, 0.3);
       border-radius: 999px;
       color: var(--accent);
@@ -268,8 +264,8 @@
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 4.2vw, 3.6rem);
-      line-height: 1.18;
+      font-size: clamp(2.3rem, 4.2vw, 3.5rem);
+      line-height: 1.2;
       font-weight: 900;
       letter-spacing: -0.03em;
       margin-bottom: 20px;
@@ -283,7 +279,7 @@
 
     .hero-desc {
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       line-height: 1.75;
       margin-bottom: 32px;
       max-width: 540px;
@@ -310,7 +306,7 @@
     }
 
     .meta-val {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', var(--font-sans);
@@ -321,7 +317,7 @@
       color: var(--text-dim);
     }
 
-    /* Interactive IDE Mockup (Hero Right) */
+    /* Interactive IDE Mockup */
     .editor-card {
       background: var(--dark-card);
       border: 1px solid var(--dark-border-light);
@@ -435,8 +431,8 @@
       color: var(--accent);
       min-height: 52px;
       display: flex;
-      align-items: center;
-      gap: 8px;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .run-btn {
@@ -491,7 +487,7 @@
       font-size: 1.05rem;
     }
 
-    /* Feature Grid (Why VS Code & Philosophy) */
+    /* Feature Grid (Why VS Code & Advanced Approach) */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -560,7 +556,7 @@
       line-height: 1.68;
     }
 
-    /* Interactive Tutorials Section (教學程式設計) */
+    /* Interactive Tutorials Section */
     .tutorials-container {
       background: var(--dark-card);
       border: 1px solid var(--dark-border);
@@ -612,13 +608,6 @@
 
     .tutorial-pane.active {
       display: grid;
-      width: 29px;
-      height: 29px;
-      place-items: center;
-      border: 1px solid var(--sky);
-      border-radius: 50%;
-      color: var(--sky);
-      font: 700 19px/1 "Playfair Display", serif;
       grid-template-columns: 1fr 1.15fr;
       gap: 36px;
     }
@@ -629,7 +618,7 @@
     }
 
     .tut-info h3 {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       font-weight: 800;
       margin-bottom: 14px;
       color: var(--text-main);
@@ -673,12 +662,6 @@
       flex-shrink: 0;
     }
 
-    /* Intro */
-    .intro { padding: 118px 0; background: #fff; }
-    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .intro-stamp { position: relative; min-height: 355px; }
-    .intro .section-copy { font-size: 16px; }
-    .intro-link { display: inline-flex; gap: 10px; margin-top: 28px; padding-bottom: 4px; border-bottom: 1px solid var(--blue); color: var(--blue); font-size: 14px; font-weight: 700; }
     .step-text h4 {
       font-size: 0.95rem;
       font-weight: 600;
@@ -691,18 +674,6 @@
       margin-bottom: 0;
     }
 
-    /* Brew process */
-    .brew { overflow: hidden; padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(44px, 9vw, 112px); align-items: center; }
-    .brew-v60 { position: absolute; bottom: 35px; left: 51%; width: 178px; height: 150px; border: 4px solid var(--blue); background: rgba(255,255,255,.54); clip-path: polygon(0 0,100% 0,73% 100%,27% 100%); transform: translateX(-50%); }
-    .brew-v60::before { content: ""; position: absolute; top: 14px; right: 16px; bottom: 0; left: 16px; border-left: 1px solid #8dcce0; border-right: 1px solid #8dcce0; transform: skewX(-11deg); }
-    .brew-caption { position: absolute; right: 25px; bottom: 21px; color: var(--blue); font: 600 10px/1.4 "Playfair Display", serif; letter-spacing: .13em; text-align: right; }
-    .brew-steps { display: grid; gap: 0; margin: 28px 0 0; padding: 0; list-style: none; }
-    .brew-steps li { display: grid; grid-template-columns: 43px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid var(--line); }
-    .brew-steps li:last-child { border-bottom: 1px solid var(--line); }
-    .step-no { color: var(--blue); font: 600 15px/1.7 "Playfair Display", serif; }
-    .step-copy b { display: block; font-size: 15px; }
-    .step-copy span { color: var(--muted); font-size: 13px; }
     .tut-code-box {
       background: var(--code-bg);
       border: 1px solid var(--dark-border);
@@ -724,8 +695,6 @@
       color: var(--text-muted);
     }
 
-    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 20; max-width: min(330px, calc(100% - 44px)); padding: 13px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s, transform .25s; font-size: 13px; }
-    .toast.show { opacity: 1; transform: translateY(0); }
     .copy-btn {
       background: transparent;
       color: var(--text-dim);
@@ -736,8 +705,6 @@
       transition: var(--transition);
     }
 
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
     .copy-btn:hover {
       color: var(--accent);
     }
@@ -752,21 +719,6 @@
       max-height: 340px;
     }
 
-    @media (max-width: 560px) {
-      .wrap { width: min(100% - 34px, 1120px); }
-      .hero, .hero-grid { min-height: 680px; }
-      .hero-grid { padding-top: 100px; padding-bottom: 48px; }
-      .hero-title { font-size: 40px; }
-      .hero-lede { margin: 18px 0 23px; font-size: 14px; }
-      .hero-art { min-height: 240px; }
-      .art-label { display: none; }
-      .scroll-line { bottom: 12px; left: 17px; }
-      .section-head { display: block; }
-      .section-head .section-copy { margin-top: 15px; }
-      .footer-top { grid-template-columns: 1fr; gap: 30px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: block; }
-      .footer-bottom span + span { display: block; margin-top: 6px; }
     .tut-console {
       background: #060912;
       border-top: 1px solid var(--dark-border);
@@ -775,10 +727,6 @@
       font-size: 0.84rem;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
     .console-label {
       color: var(--text-dim);
       font-size: 0.72rem;
@@ -795,7 +743,7 @@
       white-space: pre-wrap;
     }
 
-    /* Learning Roadmap (學習路徑) */
+    /* Learning Roadmap */
     .roadmap-timeline {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -974,7 +922,7 @@
 
     .quiz-opt.wrong {
       background: rgba(239, 68, 68, 0.15);
-      border-color: #ef4444;
+      border-color: var(--danger);
       color: #fca5a5;
     }
 
@@ -984,6 +932,7 @@
       font-size: 0.92rem;
       display: none;
       margin-top: 16px;
+      line-height: 1.7;
     }
 
     .quiz-feedback.show {
@@ -999,11 +948,11 @@
 
     .quiz-feedback.fail {
       background: rgba(239, 68, 68, 0.15);
-      border: 1px solid #ef4444;
+      border: 1px solid var(--danger);
       color: #fca5a5;
     }
 
-    /* CTA Section */
+    /* CTA Banner Section */
     .cta-banner {
       background: linear-gradient(135deg, #091c38 0%, #005a9e 100%);
       border: 1px solid rgba(56, 189, 248, 0.35);
@@ -1082,8 +1031,8 @@
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--dark-border);
       border-radius: var(--radius-sm);
-      font-size: 0.8rem;
-      line-height: 1.6;
+      font-size: 0.82rem;
+      line-height: 1.7;
     }
 
     .footer-bottom {
@@ -1094,6 +1043,32 @@
       padding-top: 28px;
       font-size: 0.82rem;
       color: var(--text-dim);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 1000;
+      background: #131d33;
+      border: 1px solid var(--primary-light);
+      border-left: 4px solid var(--accent);
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      font-size: 0.88rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
 
     /* Responsive */
@@ -1111,7 +1086,8 @@
     }
 
     @media (max-width: 768px) {
-      .nav-links, .nav-cta {
+      .nav-links,
+      .nav-cta {
         display: none;
       }
       .menu-toggle {
@@ -1128,6 +1104,7 @@
         border-bottom: 1px solid var(--dark-border);
         padding: 24px;
         gap: 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       }
       .footer-grid {
         grid-template-columns: 1fr;
@@ -1141,20 +1118,27 @@
         padding: 60px 0 50px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-        <span class="brand-mark">B</span>
 
   <!-- Background Decorative Grid -->
   <div class="bg-grid"></div>
 
   <!-- Top Navigation -->
-  <header class="navbar">
+  <header class="navbar" id="top">
     <div class="container nav-inner">
-      <a href="#home" class="brand">
+      <a href="#home" class="brand" aria-label="vscode learning 首頁">
         <!-- SVG VS Code Icon -->
         <svg class="brand-icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 2.013a1.442 1.442 0 0 0-1.026.353L8.35 9.07 4.54 6.17a.9.9 0 0 0-1.1.066L1.87 7.55a.9.9 0 0 0-.06 1.34L5.6 12 1.81 15.11a.9.9 0 0 0 .06 1.34l1.57 1.314a.9.9 0 0 0 1.1.066l3.81-2.9 8.096 6.704a1.442 1.442 0 0 0 2.37-1.1V3.466a1.442 1.442 0 0 0-1.444-1.453zm-.472 4.14v11.694l-6.4-5.847 6.4-5.847z"/>
@@ -1178,7 +1162,7 @@
         </a>
       </div>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="切換選單">
+      <button class="menu-toggle" id="menuToggle" aria-label="切換導覽選單" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -1265,7 +1249,7 @@
           </div>
 
           <div class="editor-footer">
-            <span>● Python 3.12 (VirtualEnv)</span>
+            <span id="editorFooterLang">● Python 3.12 (VirtualEnv)</span>
             <span>UTF-8 | Spaces: 4 | Ln 7, Col 14</span>
           </div>
         </div>
@@ -1332,7 +1316,7 @@
           </button>
           <button class="tut-btn" data-target="tut-web">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            HTML5 & CSS3 架構
+            HTML5 &amp; CSS3 架構
           </button>
           <button class="tut-btn" data-target="tut-cpp">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
@@ -1357,7 +1341,7 @@
                 <span class="step-idx">2</span>
                 <div class="step-text">
                   <h4>VS Code 除錯技巧</h4>
-                  <p>在第 5 行設定中斷點 (F9)，觀察區域變數在記憶體中的動態分配。</p>
+                  <p>在程式行設定中斷點 (F9)，觀察區域變數在記憶體中的動態分配。</p>
                 </div>
               </li>
             </ul>
@@ -1455,7 +1439,7 @@ fetchTutorial(42);</code></pre>
                 <span class="step-idx">1</span>
                 <div class="step-text">
                   <h4>Emmet 語法縮寫</h4>
-                  <p>在 VS Code 中輸入 `header>nav.container` 按下 Tab 即可瞬間生成結構。</p>
+                  <p>在 VS Code 中輸入 <code>header&gt;nav.container</code> 按下 Tab 即可瞬間生成結構。</p>
                 </div>
               </li>
               <li class="tut-step-item">
@@ -1508,7 +1492,7 @@ fetchTutorial(42);</code></pre>
         <div class="tutorial-pane" id="tut-cpp">
           <div class="tut-info">
             <h3>單元 04：C++ 智慧指標與現代記憶體安全</h3>
-            <p>探索系統級程式設計！學習 C++11 以後的 `std::unique_ptr` 與 RAII 原則，徹底告別記憶體洩漏 (Memory Leak)。</p>
+            <p>探索系統級程式設計！學習 C++11 以後的 <code>std::unique_ptr</code> 與 RAII 原則，徹底告別記憶體洩漏 (Memory Leak)。</p>
             <ul class="tut-steps">
               <li class="tut-step-item">
                 <span class="step-idx">1</span>
@@ -1761,7 +1745,7 @@ int main() {
         </div>
 
         <div class="quiz-feedback" id="quizFeedback">
-          <strong>解析說明：</strong>在 Windows 系統中，`Shift + Alt + F` 是 VS Code 的全文件自動排版快捷鍵 (macOS 為 `Shift + Option + F`)；`Ctrl + Shift + P` 則是開啟命令面板。
+          <strong>解析說明：</strong>在 Windows 系統中，<code>Shift + Alt + F</code> 是 VS Code 的全文件自動排版快捷鍵 (macOS 為 <code>Shift + Option + F</code>)；<code>Ctrl + Shift + P</code> 則是開啟命令面板。
         </div>
       </div>
     </div>
@@ -1824,8 +1808,8 @@ int main() {
           <h5>開發工具</h5>
           <ul>
             <li><a href="#shortcuts">VS Code 常用快捷鍵</a></li>
-            <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">下載 VS Code</a></li>
-            <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub 協同平台</a></li>
+            <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">下載 VS Code</a></li>
+            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub 協同平台</a></li>
             <li><a href="#roadmap">工程師學習地圖</a></li>
           </ul>
         </div>
@@ -1835,8 +1819,8 @@ int main() {
           <ul>
             <li><a href="#home">回到頂部</a></li>
             <li><a href="#quiz">觀念即時測驗</a></li>
-            <li><a href="https://github.com/KevinKao888/WebSpec" target="_blank" rel="noopener">課程 WebSpec 規範</a></li>
-            <li><a href="https://github.com/KevinKao888/WebPage" target="_blank" rel="noopener">WebPage 範本庫</a></li>
+            <li><a href="https://github.com/KevinKao888/WebSpec" target="_blank" rel="noopener noreferrer">課程 WebSpec 規範</a></li>
+            <li><a href="https://github.com/KevinKao888/WebPage" target="_blank" rel="noopener noreferrer">WebPage 範本庫</a></li>
           </ul>
         </div>
       </div>
@@ -1852,6 +1836,9 @@ int main() {
     </div>
   </footer>
 
+  <!-- Toast Element -->
+  <div class="toast" id="siteToast" role="status" aria-live="polite">已成功複製程式碼至剪貼簿！</div>
+
   <!-- JavaScript for Interactions -->
   <script>
     // 1. Mobile Menu Toggle
@@ -1859,7 +1846,16 @@ int main() {
     const navLinks = document.getElementById('navLinks');
     if (menuToggle && navLinks) {
       menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-active');
+        const isOpen = navLinks.classList.toggle('mobile-active');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close menu when clicking navigation link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
       });
     }
 
@@ -1874,18 +1870,20 @@ int main() {
 <div class="code-line"><span class="line-no">6</span><span class="line-text">status = <span class="token-fn">empower_learner</span>(<span class="token-str">"新進開發者"</span>, <span class="token-str">"進階程式設計"</span>)</span></div>
 <div class="code-line"><span class="line-no">7</span><span class="line-text"><span class="token-fn">print</span>(status)</span></div>`,
         cmd: '$ python main.py',
-        output: '✨ 新進開發者 正在掌握 進階程式設計，技能解鎖: 邏輯解題, VS Code 快捷操作, 全端架構！'
+        output: '✨ 新進開發者 正在掌握 進階程式設計，技能解鎖: 邏輯解題, VS Code 快捷操作, 全端架構！',
+        langInfo: '● Python 3.12 (VirtualEnv)'
       },
       js: {
         code: `<div class="code-line"><span class="line-no">1</span><span class="line-text"><span class="token-comment">// vscode learning - 現代 JavaScript 非同步實作</span></span></div>
 <div class="code-line"><span class="line-no">2</span><span class="line-text"><span class="token-keyword">const</span> <span class="token-fn">initLearning</span> = <span class="token-keyword">async</span> () => {</span></div>
 <div class="code-line"><span class="line-no">3</span><span class="line-text">  <span class="token-keyword">const</span> modules = [<span class="token-str">"語法基礎"</span>, <span class="token-str">"VS Code 擴充外掛"</span>, <span class="token-str">"實戰專案"</span>];</span></div>
-<div class="code-line"><span class="line-no">4</span><span class="line-text">  <span class="token-keyword">return</span> <span class="token-str">`🚀 啟動學習引擎！完成載入 \${modules.length} 個高階教學模組。`</span>;</span></div>
+<div class="code-line"><span class="line-no">4</span><span class="line-text">  <span class="token-keyword">return</span> <span class="token-str">\`🚀 啟動學習引擎！完成載入 \${modules.length} 個高階教學模組。\`</span>;</span></div>
 <div class="code-line"><span class="line-no">5</span><span class="line-text">};</span></div>
 <div class="code-line"><span class="line-no">6</span><span class="line-text"></span></div>
 <div class="code-line"><span class="line-no">7</span><span class="line-text"><span class="token-fn">initLearning</span>().<span class="token-fn">then</span>(console.log);</span></div>`,
         cmd: '$ node app.js',
-        output: '🚀 啟動學習引擎！完成載入 3 個高階教學模組。'
+        output: '🚀 啟動學習引擎！完成載入 3 個高階教學模組。',
+        langInfo: '● Node.js v20.10.0'
       },
       html: {
         code: `<div class="code-line"><span class="line-no">1</span><span class="line-text"><span class="token-comment">&lt;!-- 語意化 HTML5 架構示範 --&gt;</span></span></div>
@@ -1894,7 +1892,8 @@ int main() {
 <div class="code-line"><span class="line-no">4</span><span class="line-text">  &lt;<span class="token-keyword">button</span> <span class="token-var">class</span>=<span class="token-str">"btn-cta"</span>&gt;立即進入學習&lt;/<span class="token-keyword">button</span>&gt;</span></div>
 <div class="code-line"><span class="line-no">5</span><span class="line-text">&lt;/<span class="token-keyword">section</span>&gt;</span></div>`,
         cmd: '$ live-server --port=5500',
-        output: 'Serving "index.html" at http://127.0.0.1:5500 (Live Reload Active)'
+        output: 'Serving "index.html" at http://127.0.0.1:5500 (Live Reload Active)',
+        langInfo: '● HTML5 & CSS3 (Live Server)'
       }
     };
 
@@ -1903,6 +1902,7 @@ int main() {
     const heroOutput = document.getElementById('heroOutput');
     const heroRunBtn = document.getElementById('heroRunBtn');
     const heroTabs = document.querySelectorAll('.editor-tab');
+    const editorFooterLang = document.getElementById('editorFooterLang');
 
     heroTabs.forEach(tab => {
       tab.addEventListener('click', () => {
@@ -1910,9 +1910,12 @@ int main() {
         tab.classList.add('active');
         currentHeroLang = tab.getAttribute('data-lang');
         heroCodeDisplay.innerHTML = heroSnippets[currentHeroLang].code;
+        if (editorFooterLang) {
+          editorFooterLang.innerText = heroSnippets[currentHeroLang].langInfo;
+        }
         heroOutput.innerHTML = `
           <span style="color: #64748b;">${heroSnippets[currentHeroLang].cmd}</span>
-          <span style="color: #38bdf8;">點擊右上角「RUN」按鈕模擬程式編譯與執行結果</span>
+          <span style="color: #38bdf8; font-weight: 500;">點擊右上角「RUN」按鈕模擬程式編譯與執行結果</span>
         `;
       });
     });
@@ -1943,14 +1946,27 @@ int main() {
       });
     });
 
-    // 4. Copy Code Helper
+    // 4. Toast helper & Copy Code Helper
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('siteToast');
+      if (!toast) return;
+      toast.innerText = msg;
+      toast.classList.add('show');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
     function copyCode(elementId) {
       const el = document.getElementById(elementId);
       if (!el) return;
       navigator.clipboard.writeText(el.innerText).then(() => {
-        alert("已成功複製程式碼至剪貼簿！");
+        showToast("已成功複製程式碼至剪貼簿！");
       }).catch(err => {
         console.error("無法複製代碼", err);
+        showToast("複製代碼失敗，請手動選取複製");
       });
     }
 
